@@ -4,6 +4,7 @@ import 'package:tags/category_pressed.dart';
 import 'package:tags/data/categories.dart';
 import 'package:tags/data/quotes.dart';
 import 'package:tags/item_button.dart';
+import 'package:tags/screens/phrase_screen.dart';
 
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen({Key? key}) : super(key: key);
@@ -70,7 +71,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     .map((e) => ItemButton(
                           categoryPressed: e,
                           itemHandler: () {
-                            _showQuotes(e);
+                            //TODO make next rows of code in Column 1 and 2 identical
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PhraseScreen(value: e.category)));
                           },
                         ))
                     .toList(),
